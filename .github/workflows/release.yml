@@ -26,14 +26,6 @@ jobs:
           python setup.py --version
           python setup.py sdist bdist_wheel
 
-      - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
-
-          print_hash: true
-
       - name: Create release
         uses: actions/github-script@v6
         with:
